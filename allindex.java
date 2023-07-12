@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.io.*;
+
 
 public class allindex {
 
@@ -24,13 +24,14 @@ public class allindex {
     }
 
     public static void main(String[] args) {
-        Scanner scn = new Scanner(System.in);
-        int n = scn.nextInt();
-        int[] a = new int[n];
-        for (int i = 0; i < n; i++) {
-            a[i] = scn.nextInt();
+        try (Scanner scn = new Scanner(System.in)) {
+            int n = scn.nextInt();
+            int[] a = new int[n];
+            for (int i = 0; i < n; i++) {
+                a[i] = scn.nextInt();
+            }
+            int key = scn.nextInt();
+            all(a, key, 0, 0);
         }
-        int key = scn.nextInt();
-        int[] fs = all(a, key, 0, 0);
     }
 }
